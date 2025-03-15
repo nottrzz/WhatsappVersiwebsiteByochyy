@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="css/chat.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body id="body">
+
+
+    <div class="containerVideo" id="modalVideo">
+        <button class="tombolkluar">X</button>
+        <video  id="video" src="">
+        </video>
+    </div>
+    <script>
+        const tombolKamera = document.getElementById('tombolKamera')
+        const modalVideo = document.getElementById('modalVideo')
+        const tutupV = document.querySelector('.tombolkluar')
+        function aktifKamera(){
+            modalVideo.style.display = 'block';
+            navigator.mediaDevices.getUserMedia({video: true}).then(stream => {
+                const video = document.getElementById('video')
+            video.srcObject = stream
+            }).catch(error => {
+                console.error('Error mengaktifkan kamera:', error)
+            })
+        }
+
+        function tutupkamera(){
+            modalVideo.style.display = 'none'
+        }
+        // tombolKamera.addEventListener('click', aktifKamera())
+        tombolKamera.addEventListener('click', () =>{
+            if(modalVideo.style.display === 'block'){
+                    modalVideo.style.display = 'none'
+                }else{
+                    modalVideo.style.display ='block'
+                }
+        })
+
+        tutupV.addEventListener('click', tutupkamera())
+    
+    </script>
+
+
+
+        <header>
+            <h1>WhatsBenk</h1>
+            <h2 class="desktoph2">Chats</h2>
+            <div class="menudesktop">
+                <i class="fas fa-bars icon"></i>
+            </div>
+            <div class="caridesktop">
+                <div class="serchdesktop">
+                    <i class="fas fa-search icon"></i>
+                </div>
+                <input type="text" class="pencarian" placeholder="cari apa yg kamu mau disini...">
+            </div>
+            <ul class="h">
+                <li class="liheader" id="tombolKamera">
+                    <a href="#"> <i class="fas fa-camera icon"></i></a>
+                </li>
+                <li class="liheader klik" id="klik"   >
+                    <a  href="#"> <i  class="fas fa-ellipsis-v icon"></i></a>
+                </li>
+            </ul>
+        </header>
+<!--  -->
+
+
+
+        <div class="menu">
+            <div class="bungkusmenu">
+                <button class="btn-menu">Grup baru</button>
+                <button class="btn-menu">Siaran baru</button>
+                <button class="btn-menu">Perangkat Tertaut</button>
+                <button class="btn-menu">Pesan Berbintang</button>
+                <button class="btn-menu">Pengaturan</button>
+            </div>
+
+            </div>
+
+            
+    
+
+
+        
+        <script>
+            const tombolMenu = document.getElementById('klik')
+            const modal = document.querySelector('.menu')
+            let modalterbuka = false;
+
+            tombolMenu.addEventListener('click', () =>{
+                // modal.style.display = 'block';
+                if(modal.style.display === 'block'){
+                    modal.style.display = 'none'
+                }else{
+                    modal.style.display ='block'
+                }
+            })
+
+            window.addEventListener('click', (even) =>{
+                if(!modal.contains(event.target) && event.target !== tombolMenu){
+                    modal.style.display ='none'
+                    modalterbuka = false;
+                }
+            })
+        </script>
+
+
+        <div class="kosongan">
+            igytyu
+        </div>
+    <div class="container">
+        <section>
+            <div class="s-top">
+                <div class="cari">
+                    <div class="serch">
+                        <i class="fas fa-search icon"></i>
+                    </div>
+                    <input type="text" placeholder="Tanya Ochyy AI atau Cari">
+                </div>
+                <div class="btn-s">
+                    <button class="btn-top">Semua</button>
+                    <button class="btn-top">Belum Dibaca</button>
+                    <button class="btn-top">Favorit</button>
+                    <button class="btn-top">Grup</button>
+                    <button class="btn-top">+</button>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="item-top">
+                    <div class="item-b">
+                        <img src="profil.jpg" alt="">
+                        <button class="btn-content">
+                            <h4>Benk AI</h4>
+                            <h5 for=""> Test AI, Mollitia iure libero nam.</h5>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item-b">
+                        <img src="chy.jpg" alt="">
+                        <!-- <img src="https://b.top4top.io/p_33562uqux1.jpg" alt=""> -->
+                        <button class="btn-content">
+                            <h4>ochyy</h4>
+                            <h5 for=""> consectetur adipisicing elit. Mollitia iure libero nam.</h5>
+                        </button>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-b">
+                        <img src="logo.png" alt="">
+                        <!-- <img src="https://b.top4top.io/p_33562uqux1.jpg" alt=""> -->
+                        <button class="btn-content">
+                            <h4>Chyybenk</h4>
+                            <h5 for="">Bendaro loonam mollitia iure libero nam.</h5>
+                        </button>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-b">
+                        <img src="https://b.top4top.io/p_33562uqux1.jpg" alt="">
+                        <button class="btn-content">
+                            <h4>none</h4>
+                            <h5 for="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia iure libero nam.</h5>
+                        </button>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-b">
+                        <img src="https://b.top4top.io/p_33562uqux1.jpg" alt="">
+                        <button class="btn-content">
+                            <h4>none</h4>
+                            <h5 for="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia iure libero nam.</h5>
+                        </button>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-b">
+                        <img src="profil.jpg" alt="">
+                        <button class="btn-content">
+                            <h4>Chyybenk</h4>
+                            <h5 for="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia iure libero nam.</h5>
+                        </button>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-b">
+                        <img src="profil.jpg" alt="">
+                        <button class="btn-content">
+                            <h4>Chyybenk</h4>
+                            <h5 for="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia iure libero nam.</h5>
+                        </button>
+                    </div>
+                </div>
+                <hr>
+                <div class="footer-section">
+                    <div class="enkripsi">
+                    <i class="fas fa-lock icon"></i>
+                    Pesan pribadi Anda <span>terenkripsi secara end-to-end</span>
+                </div>
+                </div>
+            </div>
+        </section>
+
+
+        <button class="tombol-meta"><i class="fas fa-circle"></i></button>
+        <button class="tombol-tambah"><i class="fas fa-message"></i>
+        +
+        </button>
+
+
+        <div class="sidebarcontent">
+            <div class="topcontent">
+                <img src="logo.png" alt="" class="logocontent">
+                <h3 class="judulkonten">Chyybenk for Windwos</h3>
+                <p>Send and receive messages without keeping your phone online. <br>
+                use Chyybenk on up to 40 linked devices and 1 phone at the same time
+                </p>
+            </div>
+        </div>
+
+
+    </div>
+    <footer>
+        <div class="f-content">
+            <ul class="flink">
+                <li>
+                    <a href="#">
+                    <i class="fas fa-comment icon"></i>
+                    </a>
+                    <a href="#" class="tex">Chat</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-user-circle icon"></i>
+                    </a>
+                    <a href="#" class="tex">Pembaruan</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-users icon"></i>
+                    </a>
+                    <a href="#" class="tex">Komunitas</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-phone icon"></i>
+                    </a>
+                    <a href="#" class="tex">Panggilan</a>
+                </li>
+            </ul>
+            <hr class="garisdesktopfooter">
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"></script>
+</body>
+</html>
+
+<!-- https://b.top4top.io/p_33562uqux1.jpg -->
+<!-- https://top4top.io/delaed4d645fef7b9d1a9b97666e58cabf5.html -->
